@@ -2,7 +2,7 @@ package Models;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class RealEstate { //objektine class
+public class RealEstate {
     public WebDriver driver;
     public String municipality;
     public String place;
@@ -35,13 +35,13 @@ public class RealEstate { //objektine class
         this.driver = Helper.driver;
     }
 
-//    public void fill() {
+    public void fill() {
 //        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[3]/span[1]/span")).click(); // city
 //        Helper.driver.findElement(By.xpath("//*[@id=\"regionDropdown\"]/li[2]")).click();
 //        Helper.driver.findElement(By.xpath("//*[@id=\"quartalField\"]/span[1]/span[2]")).click(); // microdistrict
 //        Helper.driver.findElement(By.xpath("//*[@id=\"quartals_1\"]/li[2]")).click();
 //        Helper.driver.findElement(By.xpath("//*[@id=\"streetField\"]/span[1]/span[2]")).click(); // street
 //        Helper.driver.findElement(By.xpath("//*[@id=\"streets_1\"]/li[24]")).click();
-//    }
+    }
 
 }

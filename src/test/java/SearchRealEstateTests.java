@@ -15,7 +15,7 @@ public class SearchRealEstateTests {
         Helper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
     @AfterClass
-    public void afterclass() {
+    public void afterClass() {
         Helper.driver.quit();
     }
     @BeforeMethod
