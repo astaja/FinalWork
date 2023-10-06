@@ -1,12 +1,13 @@
 package Models;
-import org.openqa.selenium.By;
+import Extra.Helper;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 
 public class RealEstate {
     public WebDriver driver;
-    public String municipality;
-    public String place;
-    public String microdistrict;
+    public String region;
+    public String district;
+    public String quartal;
     public String street;
     public String object;
     public String description;
@@ -17,12 +18,12 @@ public class RealEstate {
     public String phone;
     public String email;
 
-    public RealEstate (String municipality, String place, String microdistrict, String street, String object,
+    public RealEstate (String region, String district, String quartal, String street, String object,
                   String description, String photo, String link, String threedee, String price, String phone,
-                  String email, WebDriver driver) {
-        this.municipality = municipality;
-        this.place = place;
-        this.microdistrict = microdistrict;
+                  String email) {
+        this.region = region;
+        this.district = district;
+        this.quartal = quartal;
         this.street = street;
         this.object = object;
         this.description = description;
@@ -36,12 +37,12 @@ public class RealEstate {
     }
 
     public void fill() {
-//        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[3]/span[1]/span")).click(); // city
-//        Helper.driver.findElement(By.xpath("//*[@id=\"regionDropdown\"]/li[2]")).click();
-//        Helper.driver.findElement(By.xpath("//*[@id=\"quartalField\"]/span[1]/span[2]")).click(); // microdistrict
-//        Helper.driver.findElement(By.xpath("//*[@id=\"quartals_1\"]/li[2]")).click();
-//        Helper.driver.findElement(By.xpath("//*[@id=\"streetField\"]/span[1]/span[2]")).click(); // street
-//        Helper.driver.findElement(By.xpath("//*[@id=\"streets_1\"]/li[24]")).click();
+        driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[3]/span[1]/span")).click();
+        driver.findElement(By.xpath("//*[@id=\"regionDropdown\"]/li[2]")).click();
+        driver.findElement(By.xpath("//*[@id=\"quartalField\"]/span[1]/span[2]")).click();
+        driver.findElement(By.xpath("//*[@id=\"quartals_1\"]/li[2]")).click();
+        driver.findElement(By.xpath("//*[@id=\"streetField\"]/span[1]/span[2]")).click();
+        driver.findElement(By.xpath("//*[@id=\"streets_1\"]/li[24]")).click();
     }
 
 }
