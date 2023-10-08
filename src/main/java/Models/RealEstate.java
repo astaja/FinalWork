@@ -56,7 +56,7 @@ public class RealEstate {
     }
 
     public void openPage() {
-        Helper.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=11");
+        Helper.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=10");
     }
     public void setClicks() {
         Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[23]/span/label")).click();

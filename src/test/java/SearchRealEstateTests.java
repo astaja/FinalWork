@@ -16,7 +16,7 @@ public class SearchRealEstateTests {
     @BeforeClass
     public void beforeClass() {
         Helper.driver = new ChromeDriver();
-        Helper.wait = new WebDriverWait(Helper.driver, Duration.ofSeconds(5));
+       // Helper.wait = new WebDriverWait(Helper.driver, Duration.ofSeconds(5));
         Helper.driver.manage().window().maximize();
         Helper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
@@ -65,5 +65,5 @@ public class SearchRealEstateTests {
 //        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[24]/div/div/div/label")).click();
 //        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[25]/span[1]/div/div/label/span")).click();
 //        Helper.driver.findElement(By.id("submitFormButton")).click();
-    }
+//    }
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 public class SearchRE extends RealEstate{
     public String object;
     public SearchRE(String region, String district, String quartal, String street, String object, String description, String photo, String link, String threedee, String price, String phone, String email) {
-        super(region, district, quartal, street, object, description, photo, link, threedee, price, phone, email);
+        super(region, district, quartal, street, description, photo, link, threedee, price, phone, email);
         this.object = object;
     }
     public void selectObjectType() {
