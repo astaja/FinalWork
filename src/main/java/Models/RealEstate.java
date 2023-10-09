@@ -59,31 +59,37 @@ public class RealEstate {
 //        Helper.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=10");
 //    }
     public void setClicks() {
-        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[23]/span/label")).click();
-        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[24]/div/div/div/label")).click();
-        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[25]/span[1]/div/div/label/span")).click();
+        List<WebElement> li = driver.findElements(By.tagName("li"));
+        int thirdFromEnd = li.size() - 3;
+        int fourthFromEnd = li.size() - 4;
+        int fifthFromEnd = li.size() - 5;
+        li.get(thirdFromEnd).findElements(By.tagName("label")).get(1).click();
+        li.get(fourthFromEnd).findElements(By.tagName("label")).get(1).click();
+        li.get(fifthFromEnd).findElement(By.tagName("span")).click();
+//        Helper.driver.findElement(By.id("cbdont_show_in_ads")).click();
+//        Helper.driver.findElement(By.id("cbdont_want_chat")).click();
+//        Helper.driver.findElement(By.id("cbagree_to_rules")).click();
         Helper.driver.findElement(By.id("submitFormButton")).click();
     }
     public void setEmail() {
-        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[22]/span[1]/input")).sendKeys(email);
+        Helper.driver.findElement(By.name("email")).sendKeys(email);
     }
     public void setPhone() {
-        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[21]/span[1]/input")).sendKeys(phone);
+        Helper.driver.findElement(By.name("phone")).sendKeys(phone);
     }
     public void setPrice() {
         Helper.driver.findElement(By.xpath("//*[@id=\"priceField\"]")).sendKeys(price);
     }
     public void setThreedee() {
-        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[18]/span[1]/input")).sendKeys(threedee);
+        Helper.driver.findElement(By.name("tour_3d")).sendKeys(threedee);
     }
     public void setLink() {
-        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[17]/span[1]/input")).sendKeys(link);
+        Helper.driver.findElement(By.name("Video")).sendKeys(link);
     }
 
     public void description() {
-        Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[13]/div/div[1]/textarea")).sendKeys(description);
+        Helper.driver.findElement(By.name("notes_lt")).sendKeys(description);
     }
-
     public void uploadFile() {
         String path = System.getProperty("user.dir") + "/TestImages/house3.jpg"; // upload pic
         WebElement uploadFile = Helper.driver.findElement(By.xpath("//*[@id=\"uploadPhotoBtn\"]/input"));
