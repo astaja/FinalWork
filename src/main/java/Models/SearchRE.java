@@ -16,7 +16,6 @@ public class SearchRE extends RealEstate{
 
     @Override
     public void fill() {
-        Helper.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=11");
         super.fill();
         selectObjectType();
     }

@@ -19,6 +19,7 @@ public class SearchRealEstateTests {
        // Helper.wait = new WebDriverWait(Helper.driver, Duration.ofSeconds(5));
         Helper.driver.manage().window().maximize();
         Helper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        Helper.acceptCookies();
     }
     @AfterClass
     public void afterClass() {
@@ -26,13 +27,11 @@ public class SearchRealEstateTests {
     }
     @BeforeMethod
     public void beforeMethod() {
-        Helper.acceptCookies();
     }
     @AfterMethod
     public void afterMethod() throws InterruptedException {
         Thread.sleep(3000);
     }
-
     @Test
     public void positiveOOPTest() {
         SearchRE re = new SearchRE("Kaunas", "Kauno m.", "Aleksotas", "Aido g.",

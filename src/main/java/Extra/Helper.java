@@ -10,7 +10,8 @@ public class Helper {
     public static WebDriverWait wait;
 
     public static void acceptCookies() {
-        Helper.driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+        driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=11");
+        driver.findElement(By.id("onetrust-accept-btn-handler")).click();
     }
 
 }
