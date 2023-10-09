@@ -15,7 +15,7 @@ public class Plot extends RealEstate{
     public String textArea;
 
     public Plot(String region, String district, String quartal, String street, String selectNr, String selectRCNr,
-                String area, String purpose, String features, String textArea, String photo, String link, String threedee,
+                String area, String purpose, String features, String description, String photo, String link, String threedee,
                 String price, String phone, String email) {
         super(region,
                 district,
@@ -33,7 +33,6 @@ public class Plot extends RealEstate{
         this.area = area;
         this.purpose = purpose;
         this.features = features;
-        this.textArea = textArea;
         this.driver = Helper.driver;
         this.wait = Helper.wait;
     }
@@ -47,26 +46,23 @@ public class Plot extends RealEstate{
         area();
         purpose();
         features();
-        textArea();
         driver.findElement(By.id("submitFormButton")).click();
     }
     public void selectNr() {
-        driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[7]/span[1]/input")).sendKeys("123");
+        driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[7]/span[1]/input")).sendKeys(selectNr);
     }
     public void selectRCNr() {
-        driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[11]/div[1]/input")).sendKeys("123-123-123");
+        driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[11]/div[1]/input")).sendKeys(selectRCNr);
     }
     public void area() {
-        driver.findElement(By.xpath("//*[@id=\"fieldFAreaOverAll\"]")).sendKeys("10");
+        driver.findElement(By.xpath("//*[@id=\"fieldFAreaOverAll\"]")).sendKeys(area);
     }
     public void purpose() {
-        driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[16]/div/div[5]/label/text()")).click();
+        driver.findElement(By.name("FIntendance[]")).click();
     }
+    //By.id("cb_FIntendance_forest")
     public void features() {
         driver.findElement(By.id("showMoreFields")).click();
         driver.findElement(By.id("cb_SpecialLot_11")).click();
-    }
-    public void textArea() {
-        driver.findElement(By.name("notes_lt")).sendKeys("MY TEXT AREA IS HERE");
     }
 }
