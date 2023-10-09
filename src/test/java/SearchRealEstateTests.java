@@ -1,14 +1,7 @@
-import Models.RealEstate;
-import Models.SearchRE;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import Models.REObject;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
-import java.util.List;
-import java.util.Set;
 
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import Extra.Helper;
 
@@ -18,7 +11,7 @@ public class SearchRealEstateTests {
         Helper.driver = new ChromeDriver();
        // Helper.wait = new WebDriverWait(Helper.driver, Duration.ofSeconds(5));
         Helper.driver.manage().window().maximize();
-        Helper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        Helper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         Helper.acceptCookies();
     }
     @AfterClass
@@ -27,6 +20,7 @@ public class SearchRealEstateTests {
     }
     @BeforeMethod
     public void beforeMethod() {
+        Helper.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=10");
     }
     @AfterMethod
     public void afterMethod() throws InterruptedException {
@@ -34,7 +28,7 @@ public class SearchRealEstateTests {
     }
     @Test
     public void positiveOOPTest() {
-        SearchRE re = new SearchRE("Kaunas", "Kauno m.", "Aleksotas", "Aido g.",
+        REObject re = new REObject("Kaunas", "Kauno m.", "Aleksotas", "Aido g.",
                 "Namai Pirkti", "DESCRIPTION", "/TestImages/house3.jpg",
                 "https://www.youtube.com/watch?v=k85mRPqvMbE&pp=ygUKY3JhenkgZnJvZw%3D%3D&ab_channel=CrazyFrog",
                 "https://www.youtube.com/watch?v=bs9Gx4Q20pE&ab_channel=YEES", "6666", "61234567",

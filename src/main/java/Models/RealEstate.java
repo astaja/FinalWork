@@ -40,7 +40,7 @@ public class RealEstate {
     }
 
     public void fill() {
-        openPage();
+        //openPage();
         setLocation(0, region);
         setLocation(1, district);
         setLocation(2, quartal);
@@ -55,9 +55,9 @@ public class RealEstate {
         setClicks();
     }
 
-    public void openPage() {
-        Helper.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=10");
-    }
+//    public void openPage() {
+//        Helper.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=10");
+//    }
     public void setClicks() {
         Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[23]/span/label")).click();
         Helper.driver.findElement(By.xpath("//*[@id=\"newObjectForm\"]/ul/li[24]/div/div/div/label")).click();
