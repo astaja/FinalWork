@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 import java.util.List;
 
@@ -63,9 +64,10 @@ public class RealEstate {
         int thirdFromEnd = li.size() - 3;
         int fourthFromEnd = li.size() - 4;
         int fifthFromEnd = li.size() - 5;
-        li.get(thirdFromEnd).findElements(By.tagName("label")).get(1).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        li.get(fifthFromEnd).findElements(By.tagName("label")).get(1).click();
         li.get(fourthFromEnd).findElements(By.tagName("label")).get(1).click();
-        li.get(fifthFromEnd).findElement(By.tagName("span")).click();
+        li.get(thirdFromEnd).findElements(By.tagName("span")).get(1).click();
 //        Helper.driver.findElement(By.id("cbdont_show_in_ads")).click();
 //        Helper.driver.findElement(By.id("cbdont_want_chat")).click();
 //        Helper.driver.findElement(By.id("cbagree_to_rules")).click();
