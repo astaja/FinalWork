@@ -24,10 +24,10 @@ public class PlotTests {
         Thread.sleep(3000);
     }
     @Test
-    public void positivePlotTest() {
+    public void positivePlotTest() { // run test here
         Plot pl = new Plot("Kaunas", "Kauno m.", "Aleksotas", "Aido g.",
-                "123 ", "2198-8002-1019:0004", "10", "", "", "DESCRIPTION",
-                "/TestImages/house3.jpg",
+                "123 ", "2198-8002-1019:0004", "10", new int[]{1,3,5},new int[]{1,2,3},
+                "DESCRIPTION", "/TestImages/house3.jpg",
                 "https://www.youtube.com/watch?v=k85mRPqvMbE&pp=ygUKY3JhenkgZnJvZw%3D%3D&ab_channel=CrazyFrog",
                 "https://www.youtube.com/watch?v=bs9Gx4Q20pE&ab_channel=YEES", "6666", "61234567",
                 "uyvuyg@gmail.com");
